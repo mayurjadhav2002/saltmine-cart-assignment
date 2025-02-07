@@ -1,3 +1,64 @@
+# Saltmine Assignment
+
+Tech: **TypeScript**, **Jest**, and **Node**.  
+
+## Project Structure
+
+- `app.ts` contains addToCart and calculateTotal Function
+- `app.test.ts`  unit tests for app.js
+
+## Installation
+
+ **Please run Following commands to in Project locally**  
+   ```sh
+   git clone https://github.com/mayurjadhav2002/saltmine-cart-assignment
+   cd saltmine-cart-assignment
+   npm install 
+   ```
+
+```node
+npm run test                 // To run unit tests
+npm run dev                  // Run project in dev enviroment
+npm run build                // Building the Project 
+npm run start                // Run App from build folder (prod)
+``` 
+
+
+## Testing (running project locally)
+For **running locally**, update the immediately invoked function inside ```app.ts``` with the required values (line no. 101 - 111): 
+```js
+(async()=>{
+    try {
+        await addToCart("cornflakes", 1);
+        await addToCart("cornflakes", 2);
+        await addToCart("frosties", 1);
+        displayOutput();
+        resetCart();
+    } catch (error) {
+        console.log(error.message);
+    }
+})();
+```
+
+For Testing, please update the input and expected output in ```app.test.ts``` file. for e.g
+
+```ts
+test("Add a product to the cart", async () => {
+    
+    //update cornflakes & quantity to required product
+	await addToCart("cornflakes", 1);                  
+	const price = await getPrice("cornflakes");
+
+    // update the expected output
+	expect(cart["cornflakes"]).toEqual({
+		name: "cornflakes",
+		quantity: 1,
+		price: price,
+	});
+});
+
+```
+
 ## :warning: Please read these instructions carefully and entirely first
 * Clone this repository to your local machine.
 * Use your IDE of choice to complete the assignment.
