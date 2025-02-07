@@ -4,7 +4,7 @@
   "description": "Shopping cart assignment for interviews",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "serve-products": "json-server --watch db.json --port 3001"
   },
   "devDependencies": {
