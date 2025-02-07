@@ -98,15 +98,17 @@ const resetCart = (): void => {
 };
 
 //For Testing
-(async()=>{
-    try {
-        await addToCart("cornflakes", 1);
-        await addToCart("cornflakes", 2);
-        await addToCart("frosties", 1);
-        displayOutput();
-        resetCart();
-    } catch (error) {
-        console.log(error.message);
-    }
-})();
+// (async()=>{
+//     try {
+//         await addToCart("cornflakes", 1);
+//         await addToCart("cornflakes", 2);
+//         await addToCart("frosties", 1);
+//         displayOutput();
+//         resetCart();
+//     } catch (error) {
+//         console.log(error.message);
+//     }
+// })();
 
+
+export {addToCart, calculateTotal, displayOutput, resetCart, cart};

@@ -1,4 +1,4 @@
-import "./app"
+import {addToCart, calculateTotal, cart, displayOutput, resetCart} from "./app";
 beforeEach(()=>{
     jest.clearAllMocks();
 })
