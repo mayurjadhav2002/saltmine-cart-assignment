@@ -33,7 +33,7 @@ async function getProductPrice(productName: string): Promise<number> {
 	try {
 		const res = await fetch(`${BACKEND_URL}/products/${productName}`);
 		if (!res.ok) {
-			throw new Error("Error fetching product price");
+			throw new Error("PRODUCT_NOT_FOUND");
 		}
 		const data = await res.json();
 		return data.price;
@@ -109,6 +109,5 @@ const resetCart = (): void => {
 //         console.log(error.message);
 //     }
 // })();
-
 
 export {addToCart, calculateTotal, displayOutput, resetCart, cart};

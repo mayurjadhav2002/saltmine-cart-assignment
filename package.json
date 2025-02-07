@@ -4,8 +4,11 @@
   "description": "Shopping cart assignment for interviews",
   "main": "index.js",
   "scripts": {
-    "test": "jest",
-    "serve-products": "json-server --watch db.json --port 3001"
+		"test": "concurrently \"npm run serve-products\"  \"jest\"",
+		"serve-products": "json-server --watch db.json --port 3001",
+		"dev": "concurrently \"npm run serve-products\" \"ts-node app.ts\"",
+		"build": "tsc",
+		"start": "concurrently \"npm run serve-products\" \"node dist/app.js\""
   },
   "devDependencies": {
     "@types/jest": "^29.5.14",
